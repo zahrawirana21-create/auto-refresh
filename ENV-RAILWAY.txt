@@ -1,0 +1,117 @@
+========================================================
+ ENV RAILWAY — Leonardo Auto Refresher v4.11.0 (5 VPS)
+========================================================
+Cara pakai:
+1. Buka service Railway -> tab Variables -> tombol "Raw Editor".
+2. HAPUS semua isi lama, lalu paste blok sesuai nomor service.
+3. Ganti <REFRESHER_SECRET> dengan nilai secret refresher kamu
+   (sama untuk kelima service).
+4. Save, lalu klik Deploy / Redeploy.
+5. Cek https://<domain-service>/health -> harus "configured": true
+
+--------------------------- SERVICE 1 ---------------------------
+SYNC_URL=https://xhkpbgeyhgjooosmcjwo.supabase.co/functions/v1/leonardo-refresher-sync
+SUPABASE_ANON_KEY=sb_publishable_gggjLlNsMHluX6ZkAhZTKQ_zVj8-l1-
+REFRESHER_SECRET=<REFRESHER_SECRET>
+SHARD_TOTAL=5
+SHARD_INDEX=0
+WORKER_NAME=vps-1
+CONCURRENCY=1
+MAX_ACCOUNTS_PER_CYCLE=5
+MAX_PER_CYCLE=20
+CYCLE_INTERVAL_MS=120000
+ACCOUNT_COOLDOWN_MS=900000
+FAIL_COOLDOWN_MS=60000
+PAGE_WAIT_MS=30000
+CHECKPOINT_WAIT_MS=75000
+ACCOUNT_RETRIES=1
+USE_PROXY=1
+HEARTBEAT_MS=20000
+
+--------------------------- SERVICE 2 ---------------------------
+SYNC_URL=https://xhkpbgeyhgjooosmcjwo.supabase.co/functions/v1/leonardo-refresher-sync
+SUPABASE_ANON_KEY=sb_publishable_gggjLlNsMHluX6ZkAhZTKQ_zVj8-l1-
+REFRESHER_SECRET=<REFRESHER_SECRET>
+SHARD_TOTAL=5
+SHARD_INDEX=1
+WORKER_NAME=vps-2
+CONCURRENCY=1
+MAX_ACCOUNTS_PER_CYCLE=5
+MAX_PER_CYCLE=20
+CYCLE_INTERVAL_MS=120000
+ACCOUNT_COOLDOWN_MS=900000
+FAIL_COOLDOWN_MS=60000
+PAGE_WAIT_MS=30000
+CHECKPOINT_WAIT_MS=75000
+ACCOUNT_RETRIES=1
+USE_PROXY=1
+HEARTBEAT_MS=20000
+
+--------------------------- SERVICE 3 ---------------------------
+SYNC_URL=https://xhkpbgeyhgjooosmcjwo.supabase.co/functions/v1/leonardo-refresher-sync
+SUPABASE_ANON_KEY=sb_publishable_gggjLlNsMHluX6ZkAhZTKQ_zVj8-l1-
+REFRESHER_SECRET=<REFRESHER_SECRET>
+SHARD_TOTAL=5
+SHARD_INDEX=2
+WORKER_NAME=vps-3
+CONCURRENCY=1
+MAX_ACCOUNTS_PER_CYCLE=5
+MAX_PER_CYCLE=20
+CYCLE_INTERVAL_MS=120000
+ACCOUNT_COOLDOWN_MS=900000
+FAIL_COOLDOWN_MS=60000
+PAGE_WAIT_MS=30000
+CHECKPOINT_WAIT_MS=75000
+ACCOUNT_RETRIES=1
+USE_PROXY=1
+HEARTBEAT_MS=20000
+
+--------------------------- SERVICE 4 ---------------------------
+SYNC_URL=https://xhkpbgeyhgjooosmcjwo.supabase.co/functions/v1/leonardo-refresher-sync
+SUPABASE_ANON_KEY=sb_publishable_gggjLlNsMHluX6ZkAhZTKQ_zVj8-l1-
+REFRESHER_SECRET=<REFRESHER_SECRET>
+SHARD_TOTAL=5
+SHARD_INDEX=3
+WORKER_NAME=vps-4
+CONCURRENCY=1
+MAX_ACCOUNTS_PER_CYCLE=5
+MAX_PER_CYCLE=20
+CYCLE_INTERVAL_MS=120000
+ACCOUNT_COOLDOWN_MS=900000
+FAIL_COOLDOWN_MS=60000
+PAGE_WAIT_MS=30000
+CHECKPOINT_WAIT_MS=75000
+ACCOUNT_RETRIES=1
+USE_PROXY=1
+HEARTBEAT_MS=20000
+
+--------------------------- SERVICE 5 ---------------------------
+SYNC_URL=https://xhkpbgeyhgjooosmcjwo.supabase.co/functions/v1/leonardo-refresher-sync
+SUPABASE_ANON_KEY=sb_publishable_gggjLlNsMHluX6ZkAhZTKQ_zVj8-l1-
+REFRESHER_SECRET=<REFRESHER_SECRET>
+SHARD_TOTAL=5
+SHARD_INDEX=4
+WORKER_NAME=vps-5
+CONCURRENCY=1
+MAX_ACCOUNTS_PER_CYCLE=5
+MAX_PER_CYCLE=20
+CYCLE_INTERVAL_MS=120000
+ACCOUNT_COOLDOWN_MS=900000
+FAIL_COOLDOWN_MS=60000
+PAGE_WAIT_MS=30000
+CHECKPOINT_WAIT_MS=75000
+ACCOUNT_RETRIES=1
+USE_PROXY=1
+HEARTBEAT_MS=20000
+
+========================================================
+ CEK BERHASIL
+========================================================
+Log lama (SALAH):
+  SYNC_URL / REFRESHER_SECRET belum diisi - siklus otomatis tidak dijalankan
+Log benar:
+  Leonardo Auto Refresher v4.11.0 listening on :8080
+  siklus otomatis aktif (shard 1/5)
+
+Lalu buka dashboard Admin -> tab "Monitor VPS":
+harus muncul 5 kartu vps-1 .. vps-5 dengan status online.
